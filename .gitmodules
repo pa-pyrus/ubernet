@@ -1,0 +1,3 @@
+[submodule "generator/time-machine-theme"]
+	path = generator/time-machine-theme
+	url = https://github.com/jonrohan/time-machine-theme.git

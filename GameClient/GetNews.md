@@ -1,4 +1,4 @@
-# GET /GameClient/GetNews?TitleId=&lt;int&gt;&amp;Count=&lt;int&gt; #
+# GET /GameClient/GetNews?TitleId=<int>&Count=<int> #
 Retrieve news items for Uber Entertainment games.
 This endpoint does **NOT** require authentication.
 
@@ -6,77 +6,57 @@ This endpoint does **NOT** require authentication.
 `GET`
 
 ## Query String Parameters ##
-<dl>
-  <dt><code>TitleId (int)</code></dt>
-  <dd>The game you want to retrieve news items for.
-    <dl>
-      <dt><code>4</code></dt>
-      <dd>Request news items for <em>Planetary Annihilation</em>.</dd>
-    </dl>
-  </dd>
+`TitleId (int)`
+:   The game you want to retrieve news items for.
 
-  <dt><code>Count (int)</code></dt>
-  <dd>
-    The number of news items to retrieve.
-    This parameter is <em>optional</em>.
+    `4`
+    :   Request news items for *Planetary Annihilation*.
+
+`Count (int)`
+:   The number of news items to retrieve.
+    This parameter is *optional*.
     If it is omitted, all available news items are returned.
-  </dd>
-</dl>
 
 ## Response Data ##
-<dl>
-  <dt><code>News</code><dt>
-  <dd>An array of the following structure:
-    <dl>
-      <dt><code>Timestamp (string)</code></dt>
-      <dd>
-        The news item's time stamp.
-        It's format is <code>%Y-%m-%d.%H:%M:%S</code> (cf. <code>strptime(3)</code>).
-      </dd>
+`News (array)`
+:   An array of the following structure:
 
-      <dt><code>Title (string)</code></dt>
-      <dd>The news item's title.</dd>
+    `Timestamp (string)`
+    :   The news item's time stamp.
+        Its format is `%Y-%m-%d.%H:%M:%S` (cf. `strptime(3)`).
 
-      <dt><code>HtmlBody (string)</code></dt>
-      <dd>The news item's full text, formatted in HTML</dd>
-    </dl>
-  </dd>
-</dl>
+    `Title (string)`
+    :   The news item's title.
+
+    `HtmlBody (string)`
+    :   The news item's full text, formatted in HTML.
 
 ## Return Codes ##
-<dl>
-  <dt><code>200</code></dt>
-  <dd>
-    An array of news items is returned.
-    If an invalid <code>TitleId</code> is specified, the array is empty.
-  </dd>
+`200`
+:   An array of news items is returned.
+    If an invalid `TitleId` is specified, the array is empty.
 
-  <dt><code>400</code></dt>
-  <dd>
-    The query string parameters are invalid.
+`400`
+:   The query string paramters are invalid.
     Response contains a corresponding error message.
-  </dd>
-</dl>
 
 ## Example Request ##
-```HTTP
-GET /GameClient/GetNews?TitleId=4&Count=1 HTTP/1.1
-Host: uberent.com
-```
+    :::HTTP
+    GET /GameClient/GetNews?TitleId=4&Count=1 HTTP/1.1
+    Host: uberent.com
 
 ## Example Response ##
-```HTTP
-HTTP/1.1 200 OK
-Content-Type: application/json
+    :::HTTP
+    HTTP/1.1 200 OK
+    Content-Type: application/json
 
-{
-  "News":
-    [
-      {
-        "Timestamp": "2014-05-30.16:36:29",
-        "Title": "Dummy News: Build 12345",
-        "HtmlBody": "<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>"
-      }
-    ]
-}
-```
+    {
+      "News":
+        [
+          {
+            "Timestamp": "2014-05-30.16:36:29",
+            "Title": "Dummy News: Build 12345",
+            "HtmlBody": "<div>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>"
+          }
+        ]
+    }
