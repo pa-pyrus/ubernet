@@ -2,6 +2,12 @@
 This is an unofficial documentation of UberNet REST API calls.
 By no means is it complete or entirely accurate.
 
+Each endpoint is documented in its own file.
+All documentation is written in the Markdown dialect understood by [Python-Markdown](http://pythonhosted.org/Markdown/).
+It relies on the `def_list` and `codehilite` extensions.
+
+The HTML output is provided on (https://pa-pyrus.github.io/ubernet/).
+
 ## Available Hosts ##
 These API calls are at least available on `http://uberent.com` and `https://uberent.com`.
 There is also `https://uberdevent.com` for which you probably need special credentials.
