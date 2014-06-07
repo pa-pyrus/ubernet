@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
+<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <link rel="stylesheet" href="stylesheets/stylesheet.css" media="screen"/>
+  <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+  <script type="text/javascript" src="javascripts/script.js"></script>
+
+  <title>Ubernet</title>
+  <meta name="description" content="Collected documentation of UberNet webservice calls.">
+
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+    <header>
+      <h1 class="title">Ubernet</h1>
+    </header>
+    <div id="container">
+      <p class="tagline">Collected documentation of UberNet webservice calls.</p>
+      <div id="main" role="main">
+        <div class="download-bar">
+        <div class="inner">
+          <a href="https://github.com/pa-pyrus/ubernet/tarball/master" class="download-button tar"><span>Download</span></a>
+          <a href="https://github.com/pa-pyrus/ubernet/zipball/master" class="download-button zip"><span>Download</span></a>
+          <a href="https://github.com/pa-pyrus/ubernet" class="code">View Ubernet on GitHub</a>
+        </div>
+        <span class="blc"></span><span class="trc"></span>
+        </div>
+        <article class="markdown-body">
+          <h1>
+<a name="ubernet-api" class="anchor" href="#ubernet-api"><span class="octicon octicon-link"></span></a>UberNet API</h1>
+
+<p>This is an unofficial documentation of UberNet REST API calls.
+By no means is it complete or entirely accurate.</p>
+
+<h2>
+<a name="available-hosts" class="anchor" href="#available-hosts"><span class="octicon octicon-link"></span></a>Available Hosts</h2>
+
+<p>These API calls are at least available on <code>http://uberent.com</code> and <code>https://uberent.com</code>.
+There is also <code>https://uberdevent.com</code> for which you probably need special credentials.</p>
+
+<p>The file <code>cacert.pem</code> contains the CA certificate needed to verify the identity of <code>https://uberent.com</code>.
+You only need it if your certificate store doesn't already have the <em>Go Daddy Root Certificate Authority - G2</em> certificate.</p>
+
+<h2>
+<a name="authentication" class="anchor" href="#authentication"><span class="octicon octicon-link"></span></a>Authentication</h2>
+
+<p>In order to use most of the service endpoints described here, you need to have a valid session ticket.
+Session tickets are requested from <code>/GC/Authenticate</code>.
+They are a rather large string identifying your current session.
+This string needs to be passed as the value of the <code>X-Authorization</code> HTTP request header for most calls.</p>
+
+<h2>
+<a name="miscellaneous" class="anchor" href="#miscellaneous"><span class="octicon octicon-link"></span></a>Miscellaneous</h2>
+
+<p>This section details various endpoints not belonging to a larger topic.</p>
+        </article>
+      </div>
+    </div>
+    <footer>
+      <div class="owner">
+      <p><a href="https://github.com/pa-pyrus" class="avatar"><img src="https://avatars2.githubusercontent.com/u/7758667?s=60" width="48" height="48"/></a> <a href="https://github.com/pa-pyrus">pa-pyrus</a> maintains <a href="https://github.com/pa-pyrus/ubernet">Ubernet</a></p>
+
+
+      </div>
+      <div class="creds">
+        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
+      </div>
+    </footer>
+  </div>
+  <div class="current-section">
+    <a href="#top">Scroll to top</a>
+    <a href="https://github.com/pa-pyrus/ubernet/tarball/master" class="tar">tar</a><a href="https://github.com/pa-pyrus/ubernet/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
+    <p class="name"></p>
+  </div>
+
+  
+</body>
+</html>
