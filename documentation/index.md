@@ -11,11 +11,11 @@ You only need it if your certificate store doesn't already have the *Go Daddy Ro
 
 ## Authentication ##
 In order to use most of the service endpoints described here, you need to have a valid session ticket.
-Session tickets are requested from [`/GC/Authenticate`](https://pa-pyrus.github.io/ubernet/GC/Authenticate.html).
+Session tickets are requested from [`/GC/Authenticate`](https://pa-pyrus.github.io/ubernet/GC_Authenticate.html).
 They are a rather large string identifying your current session.
 This string needs to be passed as the value of the `X-Authorization` HTTP request header for most calls.
 
 ## Miscellaneous ##
 This section details various endpoints not belonging to a larger topic.
 
-* [`GameClient/GetNews`](https://pa-pyrus.github.io/ubernet/GameClient/GetNews.html) can be used to retrieve a certain number of news items for a specific game.
+* [`/GameClient/GetNews`](https://pa-pyrus.github.io/ubernet/GameClient_GetNews.html) can be used to retrieve a certain number of news items for a specific game.
