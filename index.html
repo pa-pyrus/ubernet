@@ -1,88 +1,68 @@
 <!doctype html>
-<!-- The Time Machine GitHub pages theme was designed and developed by Jon Rohan, on Feb 7, 2012. -->
-<!-- Follow him for fun. http://twitter.com/jonrohan. Tail his code on http://github.com/jonrohan -->
 <html>
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ubernet by pa-pyrus</title>
+    <link rel="stylesheet" href="static/stylesheets/styles.css">
+    <link rel="stylesheet" href="static/stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="static/javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-  <link rel="stylesheet" href="static/stylesheets/stylesheet.css" media="screen"/>
-  <link rel="stylesheet" href="static/stylesheets/pygment_trac.css"/>
-  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
-  <script type="text/javascript" src="static/javascripts/script.js"></script>
+  </head>
+  <body>
 
-  <title>Ubernet</title>
-  <meta name="description" content="Collected documentation of UberNet webservice calls.">
+      <header>
+        <h1>Ubernet</h1>
+        <p>Collected documentation of UberNet webservice calls.</p>
+      </header>
 
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+      <div id="banner">
+        <span id="logo"></span>
 
-</head>
-
-<body>
-
-  <div class="wrapper">
-    <header>
-      <h1 class="title">Ubernet</h1>
-    </header>
-    <div id="container">
-      <p class="tagline">Collected documentation of UberNet webservice calls.</p>
-      <div id="main" role="main">
-        <div class="download-bar">
-        <div class="inner">
-          <a href="https://github.com/pa-pyrus/ubernet/tarball/master" class="download-button tar"><span>Download</span></a>
-          <a href="https://github.com/pa-pyrus/ubernet/zipball/master" class="download-button zip"><span>Download</span></a>
-          <a href="https://github.com/pa-pyrus/ubernet" class="code">View Ubernet on GitHub</a>
+        <a href="https://github.com/pa-pyrus/ubernet" class="button fork"><strong>Fork On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://api.github.com/repos/pa-pyrus/ubernet/zipball" class="button">ZIP</a></li>
+            <li><a href="https://api.github.com/repos/pa-pyrus/ubernet/tarball" class="button">TAR</a></li>
+          </ul>
         </div>
-        <span class="blc"></span><span class="trc"></span>
-        </div>
-        <article class="markdown-body">
-          <h1>
-<a name="ubernet-api" class="anchor" href="#ubernet-api"><span class="octicon octicon-link"></span></a>UberNet API</h1>
 
-<p>This is an unofficial documentation of UberNet REST API calls.
-By no means is it complete or entirely accurate.</p>
+      </div><!-- end banner -->
 
-<h2>
-<a name="available-hosts" class="anchor" href="#available-hosts"><span class="octicon octicon-link"></span></a>Available Hosts</h2>
-
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1 id="ubernet-api-documentation">UberNet API Documentation</h1>
+<p>This is an overview of UberNet REST API endpoints.
+For details check out the individual documents.</p>
+<h2 id="available-hosts">Available Hosts</h2>
 <p>These API calls are at least available on <code>http://uberent.com</code> and <code>https://uberent.com</code>.
 There is also <code>https://uberdevent.com</code> for which you probably need special credentials.</p>
-
 <p>The file <code>cacert.pem</code> contains the CA certificate needed to verify the identity of <code>https://uberent.com</code>.
 You only need it if your certificate store doesn't already have the <em>Go Daddy Root Certificate Authority - G2</em> certificate.</p>
-
-<h2>
-<a name="authentication" class="anchor" href="#authentication"><span class="octicon octicon-link"></span></a>Authentication</h2>
-
+<h2 id="authentication">Authentication</h2>
 <p>In order to use most of the service endpoints described here, you need to have a valid session ticket.
-Session tickets are requested from <code>/GC/Authenticate</code>.
+Session tickets are requested from <a href="https://pa-pyrus.github.io/ubernet/GC_Authenticate.html"><code>/GC/Authenticate</code></a>.
 They are a rather large string identifying your current session.
 This string needs to be passed as the value of the <code>X-Authorization</code> HTTP request header for most calls.</p>
-
-<h2>
-<a name="miscellaneous" class="anchor" href="#miscellaneous"><span class="octicon octicon-link"></span></a>Miscellaneous</h2>
-
+<h2 id="miscellaneous">Miscellaneous</h2>
 <p>This section details various endpoints not belonging to a larger topic.</p>
-        </article>
-      </div>
+<ul>
+<li><a href="https://pa-pyrus.github.io/ubernet/GameClient_GetNews.html"><code>/GameClient/GetNews</code></a> can be used to retrieve a certain number of news items for a specific game.</li>
+</ul>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
     </div>
-    <footer>
-      <div class="owner">
-      <p><a href="https://github.com/pa-pyrus" class="avatar"><img src="https://avatars2.githubusercontent.com/u/7758667?s=60" width="48" height="48"/></a> <a href="https://github.com/pa-pyrus">pa-pyrus</a> maintains <a href="https://github.com/pa-pyrus/ubernet">Ubernet</a></p>
-
-
-      </div>
-      <div class="creds">
-        <small>This page generated using <a href="http://pages.github.com/">GitHub Pages</a><br/>theme by <a href="https://twitter.com/jonrohan/">Jon Rohan</a></small>
-      </div>
-    </footer>
-  </div>
-  <div class="current-section">
-    <a href="#top">Scroll to top</a>
-    <a href="https://github.com/pa-pyrus/ubernet/tarball/master" class="tar">tar</a><a href="https://github.com/pa-pyrus/ubernet/zipball/master" class="zip">zip</a><a href="" class="code">source code</a>
-    <p class="name"></p>
-  </div>
-
-
-</body>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
 </html>

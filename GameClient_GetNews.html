@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Ubernet by pa-pyrus</title>
+    <link rel="stylesheet" href="static/stylesheets/styles.css">
+    <link rel="stylesheet" href="static/stylesheets/pygment_trac.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script src="static/javascripts/main.js"></script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+
+  </head>
+  <body>
+
+      <header>
+        <h1>Ubernet</h1>
+        <p>Collected documentation of UberNet webservice calls.</p>
+      </header>
+
+      <div id="banner">
+        <span id="logo"></span>
+
+        <a href="https://github.com/pa-pyrus/ubernet" class="button fork"><strong>Fork On GitHub</strong></a>
+        <div class="downloads">
+          <span>Downloads:</span>
+          <ul>
+            <li><a href="https://api.github.com/repos/pa-pyrus/ubernet/zipball" class="button">ZIP</a></li>
+            <li><a href="https://api.github.com/repos/pa-pyrus/ubernet/tarball" class="button">TAR</a></li>
+          </ul>
+        </div>
+
+      </div><!-- end banner -->
+
+    <div class="wrapper">
+      <nav>
+        <ul></ul>
+      </nav>
+      <section>
+        <h1 id="get-gameclientgetnews">GET /GameClient/GetNews</h1>
+<p>Retrieve news items for Uber Entertainment games.
+This endpoint does <strong>NOT</strong> require authentication.</p>
+<h2 id="request-method">Request Method</h2>
+<p><code>GET</code></p>
+<h2 id="query-string-parameters">Query String Parameters</h2>
+<dl>
+<dt><code>TitleId (int)</code></dt>
+<dd>
+<p>The game you want to retrieve news items for.</p>
+<dl>
+<dt><code>4</code></dt>
+<dd>Request news items for <em>Planetary Annihilation</em>.</dd>
+</dl>
+</dd>
+<dt><code>Count (int)</code></dt>
+<dd>The number of news items to retrieve.
+This parameter is <em>optional</em>.
+If it is omitted, all available news items are returned.</dd>
+</dl>
+<h2 id="response-data">Response Data</h2>
+<dl>
+<dt><code>News (array)</code></dt>
+<dd>
+<p>An array of the following structure:</p>
+<dl>
+<dt><code>Timestamp (string)</code></dt>
+<dd>The news item's time stamp.
+Its format is <code>%Y-%m-%d.%H:%M:%S</code> (cf. <code>strptime(3)</code>).</dd>
+<dt><code>Title (string)</code></dt>
+<dd>The news item's title.</dd>
+<dt><code>HtmlBody (string)</code></dt>
+<dd>The news item's full text, formatted in HTML.</dd>
+</dl>
+</dd>
+</dl>
+<h2 id="return-codes">Return Codes</h2>
+<dl>
+<dt><code>200</code></dt>
+<dd>An array of news items is returned.
+If an invalid <code>TitleId</code> is specified, the array is empty.</dd>
+<dt><code>400</code></dt>
+<dd>The query string paramters are invalid.
+Response contains a corresponding error message.</dd>
+</dl>
+<h2 id="example-request">Example Request</h2>
+<div class="highlight"><pre><span class="nf">GET</span> <span class="nn">/GameClient/GetNews?TitleId=4&amp;Count=1</span> <span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span>
+<span class="na">Host</span><span class="o">:</span> <span class="l">uberent.com</span>
+</pre></div>
+
+
+<h2 id="example-response">Example Response</h2>
+<div class="highlight"><pre><span class="kr">HTTP</span><span class="o">/</span><span class="m">1.1</span> <span class="m">200</span> <span class="ne">OK</span>
+<span class="na">Content-Type</span><span class="o">:</span> <span class="l">application/json</span>
+
+<span class="p">{</span>
+  <span class="nt">&quot;News&quot;</span><span class="p">:</span>
+    <span class="p">[</span>
+      <span class="p">{</span>
+        <span class="nt">&quot;Timestamp&quot;</span><span class="p">:</span> <span class="s2">&quot;2014-05-30.16:36:29&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;Title&quot;</span><span class="p">:</span> <span class="s2">&quot;Dummy News: Build 12345&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;HtmlBody&quot;</span><span class="p">:</span> <span class="s2">&quot;&lt;div&gt;Lorem ipsum dolor sit amet, consectetur adipiscing elit.&lt;/div&gt;&quot;</span>
+      <span class="p">}</span>
+    <span class="p">]</span>
+<span class="p">}</span>
+</pre></div>
+      </section>
+      <footer>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="http://twitter.com/#!/michigangraham">mattgraham</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
