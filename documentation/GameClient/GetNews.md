@@ -1,4 +1,4 @@
-# GET /GameClient/GetNews?TitleId=<int>&Count=<int> #
+# GET /GameClient/GetNews #
 Retrieve news items for Uber Entertainment games.
 This endpoint does **NOT** require authentication.
 
