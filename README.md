@@ -11,8 +11,6 @@ You can either generate the HTML output yourself or check (https://pa-pyrus.gith
 ## Respository Structure ##
 * `documentation` contains the UberNet documentation in Markdown files.
 * `generator` contains the resources used for generating HTML output.
-* `generator/time-machine-theme` is the template used for generating HTML output.
-  It is [Jon Rohan's Time Machine Theme](https://github.com/jonrohan/time-machine-theme).
 
 ## License Information ##
 Where not stated otherwise, this work is licensed under a [Creative Commons Attribution-ShareAlike 4.0 International License](http://creativecommons.org/licenses/by-sa/4.0/).
