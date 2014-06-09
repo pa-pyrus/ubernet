@@ -59,7 +59,7 @@ You need to pass JSON-encoded Uber credentials.
       "Password": "DummyPass"
     }
 
-#### Example Response ####
+## Example Response ##
     :::HTTP
     HTTP/1.1 200 OK
     Content-Type: application/json
